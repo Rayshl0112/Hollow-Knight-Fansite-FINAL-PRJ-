@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Builder - Hollow Knight Archives</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hall of Maps</a></li>
+                <li><a href="charms.html">Charm Inventory</a></li>
+                <li><a href="weapons.html">Nail Arts</a></li>
+                <li><a href="locations.html">Kingdom Locations</a></li>
+                <li><a href="builder.html">Build Builder</a></li>
+                <li><a href="survey.html">Survey</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <header>
+            <figure>
+                <img src="img/header.png" alt="Hollow Knight header banner">
+                <figcaption>Build Builder Interface</figcaption>
+            </figure>
+            <h1>Build Builder</h1>
+            <p>Create and share your optimal Hollow Knight builds</p>
+            <center>
+                <figure>
+                    <img src="img/foot.png" alt="Decorative footer image" style="margin-top: 15px">
+                </figure>
+            </center>
+        </header>
+
+        <section class="content">
+            <article class="stats-display">
+                <h3>Current Build Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">11/11</div>
+                        <div class="stat-label">Notch Capacity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">21</div>
+                        <div class="stat-label">Nail Damage</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">33</div>
+                        <div class="stat-label">Soul Capacity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">9</div>
+                        <div class="stat-label">Masks</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="form-container">
+                <form action="#" method="post" id="build-form">
+                    <h2>Create New Build</h2>
+                    
+                    <fieldset>
+                        <legend>Build Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="build-name">Build Name <span style="color:#ff6b6b;">*</span></label>
+                            <input type="text" id="build-name" name="build-name" required placeholder="e.g., 'Speedrunner Build'">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="build-purpose">Build Purpose</label>
+                            <select id="build-purpose" name="build-purpose">
+                                <option value="">Select primary purpose</option>
+                                <option value="boss-rush">Boss Rush</option>
+                                <option value="exploration">Exploration</option>
+                                <option value="speedrun">Speedrun</option>
+                                <option value="pantheon">Pantheon Challenge</option>
+                                <option value="collecting">100% Completion</option>
+                                <option value="platforming">Platforming</option>
+                                <option value="custom">Custom</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Charm Selection</legend>
+                        
+                        <div class="form-group">
+                            <label>Select charms (up to 11 notches)</label>
+                            <div id="charm-selection" style="background: rgba(25, 40, 65, 0.7); padding: 15px; border-radius: 8px; margin-top: 10px; max-height: 400px; overflow-y: auto;">
+                                <section class="charm-category">
+                                    <h4 style="color: #4a6fb5; margin-top: 0; border-bottom: 1px solid #4a6fb5; padding-bottom: 5px;">Basic Charms (1-2 Notches)</h4>
+                                    <div class="charm-grid">
+                                        <div>
+                                            <input type="checkbox" id="charm-compass" name="charms" value="compass" data-notches="1">
+                                            <label for="charm-compass">Wayward Compass (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-gathering" name="charms" value="gathering" data-notches="1">
+                                            <label for="charm-gathering">Gathering Swarm (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-stalwart" name="charms" value="stalwart" data-notches="2">
+                                            <label for="charm-stalwart">Stalwart Shell (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-soul" name="charms" value="soul-catcher" data-notches="2">
+                                            <label for="charm-soul">Soul Catcher (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-shaman" name="charms" value="shaman" data-notches="3">
+                                            <label for="charm-shaman">Shaman Stone (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-longnail" name="charms" value="longnail" data-notches="2">
+                                            <label for="charm-longnail">Longnail (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-steady" name="charms" value="steady" data-notches="1">
+                                            <label for="charm-steady">Steady Body (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-heavy" name="charms" value="heavy" data-notches="2">
+                                            <label for="charm-heavy">Heavy Blow (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-quick" name="charms" value="quick-slash" data-notches="3">
+                                            <label for="charm-quick">Quick Slash (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-lifeblood" name="charms" value="lifeblood" data-notches="1">
+                                            <label for="charm-lifeblood">Lifeblood Heart (1 notch)</label>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="charm-category">
+                                    <h4 style="color: #8a4dbb; margin-top: 20px; border-bottom: 1px solid #8a4dbb; padding-bottom: 5px;">Advanced Charms (2-3 Notches)</h4>
+                                    <div class="charm-grid">
+                                        <div>
+                                            <input type="checkbox" id="charm-mark" name="charms" value="mark" data-notches="3">
+                                            <label for="charm-mark">Mark of Pride (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-fury" name="charms" value="fury" data-notches="2">
+                                            <label for="charm-fury">Fury of the Fallen (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-thorns" name="charms" value="thorns" data-notches="1">
+                                            <label for="charm-thorns">Thorns of Agony (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-baldur" name="charms" value="baldur" data-notches="2">
+                                            <label for="charm-baldur">Baldur Shell (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-flukenest" name="charms" value="flukenest" data-notches="3">
+                                            <label for="charm-flukenest">Flukenest (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-defender" name="charms" value="defender" data-notches="1">
+                                            <label for="charm-defender">Defender's Crest (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-glowing" name="charms" value="glowing" data-notches="2">
+                                            <label for="charm-glowing">Glowing Womb (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-weavers" name="charms" value="weavers" data-notches="2">
+                                            <label for="charm-weavers">Weaversong (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-sprint" name="charms" value="sprint" data-notches="1">
+                                            <label for="charm-sprint">Sprintmaster (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-dream" name="charms" value="dream" data-notches="3">
+                                            <label for="charm-dream">Dream Wielder (3 notches)</label>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="charm-category">
+                                    <h4 style="color: #d4af37; margin-top: 20px; border-bottom: 1px solid #d4af37; padding-bottom: 5px;">Powerful Charms (3-4 Notches)</h4>
+                                    <div class="charm-grid">
+                                        <div>
+                                            <input type="checkbox" id="charm-strength" name="charms" value="strength" data-notches="3">
+                                            <label for="charm-strength">Unbreakable Strength (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-heart" name="charms" value="heart" data-notches="2">
+                                            <label for="charm-heart">Unbreakable Heart (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-greed" name="charms" value="greed" data-notches="2">
+                                            <label for="charm-greed">Unbreakable Greed (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-grub" name="charms" value="grub" data-notches="4">
+                                            <label for="charm-grub">Grubberfly's Elegy (4 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-kingsoul" name="charms" value="kingsoul" data-notches="5">
+                                            <label for="charm-kingsoul">Kingsoul (5 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-voidheart" name="charms" value="voidheart" data-notches="0">
+                                            <label for="charm-voidheart">Void Heart (0 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-spell-twister" name="charms" value="spell-twister" data-notches="2">
+                                            <label for="charm-spell-twister">Spell Twister (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-deep-focus" name="charms" value="deep-focus" data-notches="4">
+                                            <label for="charm-deep-focus">Deep Focus (4 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-quick-focus" name="charms" value="quick-focus" data-notches="3">
+                                            <label for="charm-quick-focus">Quick Focus (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-lifeblood-core" name="charms" value="lifeblood-core" data-notches="3">
+                                            <label for="charm-lifeblood-core">Lifeblood Core (3 notches)</label>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="charm-category">
+                                    <h4 style="color: #ff6b6b; margin-top: 20px; border-bottom: 1px solid #ff6b6b; padding-bottom: 5px;">Special & Combo Charms</h4>
+                                    <div class="charm-grid">
+                                        <div>
+                                            <input type="checkbox" id="charm-joni" name="charms" value="joni" data-notches="4">
+                                            <label for="charm-joni">Joni's Blessing (4 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-shape" name="charms" value="shape" data-notches="2">
+                                            <label for="charm-shape">Shape of Unn (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-hiveblood" name="charms" value="hiveblood" data-notches="4">
+                                            <label for="charm-hiveblood">Hiveblood (4 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-dreamshield" name="charms" value="dreamshield" data-notches="3">
+                                            <label for="charm-dreamshield">Dreamshield (3 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-nailmaster" name="charms" value="nailmaster" data-notches="1">
+                                            <label for="charm-nailmaster">Nailmaster's Glory (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-grimmchild" name="charms" value="grimmchild" data-notches="2">
+                                            <label for="charm-grimmchild">Grimmchild (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-carefree" name="charms" value="carefree" data-notches="2">
+                                            <label for="charm-carefree">Carefree Melody (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-soul-eater" name="charms" value="soul-eater" data-notches="4">
+                                            <label for="charm-soul-eater">Soul Eater (4 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-dashmaster" name="charms" value="dashmaster" data-notches="2">
+                                            <label for="charm-dashmaster">Dashmaster (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-sharp-shadow" name="charms" value="sharp-shadow" data-notches="2">
+                                            <label for="charm-sharp-shadow">Sharp Shadow (2 notches)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-spore" name="charms" value="spore" data-notches="1">
+                                            <label for="charm-spore">Spore Shroom (1 notch)</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="charm-wayward" name="charms" value="wayward" data-notches="1">
+                                            <label for="charm-wayward">Wayward Compass (1 notch)</label>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="notch-counter" style="margin-top: 10px; color: #4a6fb5; font-weight: bold;">
+                                Notches used: <span id="notch-count">0</span>/11
+                            </div>
+                            <div id="charm-warning" style="margin-top: 5px; color: #ff6b6b; display: none;">
+                                ⚠️ You've exceeded the notch limit! Remove some charms.
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Build Configuration</legend>
+                        
+                        <div class="form-group">
+                            <label>Primary Playstyle</label>
+                            <div>
+                                <input type="radio" id="style-nail" name="playstyle" value="nail">
+                                <label for="style-nail" style="display: inline;">Nail-focused</label>
+                                
+                                <input type="radio" id="style-spell" name="playstyle" value="spell" style="margin-left: 20px;">
+                                <label for="style-spell" style="display: inline;">Spell-focused</label>
+                                
+                                <input type="radio" id="style-hybrid" name="playstyle" value="hybrid" style="margin-left: 20px;">
+                                <label for="style-hybrid" style="display: inline;">Hybrid</label>
+                                
+                                <input type="radio" id="style-tank" name="playstyle" value="tank" style="margin-left: 20px;">
+                                <label for="style-tank" style="display: inline;">Defensive/Tank</label>
+
+                                <input type="radio" id="style-summon" name="playstyle" value="summon" style="margin-left: 20px;">
+                                <label for="style-summon" style="display: inline;">Summoner</label>
+
+                                <input type="radio" id="style-healing" name="playstyle" value="healing" style="margin-left: 20px;">
+                                <label for="style-healing" style="display: inline;">Healing Focus</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Nail Upgrade Level</label>
+                            <select id="nail-level" name="nail-level">
+                                <option value="old-nail">Old Nail (5 damage)</option>
+                                <option value="sharpened">Sharpened Nail (9 damage)</option>
+                                <option value="channeled">Channelled Nail (13 damage)</option>
+                                <option value="coiled">Coiled Nail (17 damage)</option>
+                                <option value="pure" selected>Pure Nail (21 damage)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="build-description">Build Description <span style="color:#ff6b6b;">*</span></label>
+                            <textarea id="build-description" name="build-description" rows="4" required placeholder="Describe your build strategy, strengths, and when to use it..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="difficulty">Recommended Difficulty</label>
+                            <select id="difficulty" name="difficulty">
+                                <option value="easy">Easy (Beginner)</option>
+                                <option value="normal" selected>Normal (Standard Game)</option>
+                                <option value="hard">Hard (Pantheon/Radiant)</option>
+                                <option value="expert">Expert (Speedrun/Challenge)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bosses">Recommended For Bosses</label>
+                            <input type="text" id="bosses" name="bosses" placeholder="e.g., 'Hornet, Mantis Lords, Hollow Knight'">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tags">Build Tags (comma separated)</label>
+                            <input type="text" id="tags" name="tags" placeholder="e.g., speedrun, pantheon, spellcaster">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="author-name">Author Name</label>
+                            <input type="text" id="author-name" name="author-name" placeholder="Your name or nickname">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <input type="checkbox" id="email" name="email">
+                                Email me when someone comments on this build
+                            </label>
+                        </div>
+                    </fieldset>
+                    
+                    <section class="form-buttons">
+                        <button type="submit" id="submit-btn">Save Build</button>
+                        <button type="reset" class="secondary">Clear Form</button>
+                        <button type="button" class="secondary" onclick="window.location.href='charms.html'">View Charms</button>
+                    </section>
+                </form>
+            </article>
+
+            <article class="section-divider"></article>
+            
+            <section>
+                <h2>Popular Build Examples</h2>
+                <div class="gallery">
+                    <article class="gallery-item">
+                        <h3>⚡ Speedrunner Build</h3>
+                        <p><strong>Notches:</strong> 11/11</p>
+                        <p><strong>Charms:</strong> Quick Slash, Strength, Shaman Stone, Sprintmaster</p>
+                        <p><strong>Purpose:</strong> Any% Speedrun</p>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">speedrun</span>
+                            <span class="tag">offensive</span>
+                        </div>
+                    </article>
+                    
+                    <article class="gallery-item">
+                        <h3>🛡️ Pantheon Tank</h3>
+                        <p><strong>Notches:</strong> 11/11</p>
+                        <p><strong>Charms:</strong> Unbreakable Heart, Quick Focus, Shape of Unn, Grubberfly's Elegy</p>
+                        <p><strong>Purpose:</strong> Pantheon Survival</p>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">defensive</span>
+                            <span class="tag">pantheon</span>
+                        </div>
+                    </article>
+                    
+                    <article class="gallery-item">
+                        <h3>🔥 Spell Spammer</h3>
+                        <p><strong>Notches:</strong> 11/11</p>
+                        <p><strong>Charms:</strong> Shaman Stone, Spell Twister, Soul Catcher, Soul Eater</p>
+                        <p><strong>Purpose:</strong> Spell-focused combat</p>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">spells</span>
+                            <span class="tag">magic</span>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item">
+                        <h3>🕷️ Summoner Build</h3>
+                        <p><strong>Notches:</strong> 11/11</p>
+                        <p><strong>Charms:</strong> Weaversong, Grubsong, Glowing Womb, Defender's Crest</p>
+                        <p><strong>Purpose:</strong> Passive damage and support</p>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">summoner</span>
+                            <span class="tag">passive</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+	
+    <footer>
+        <p>🔧 Build Builder - Create and share your perfect Hallownest setup</p>
+        <p>© 2026 - Team Cherry's Hallownest | WEB SYSTEMS AND TECHNOLOGIES 1 LABORATORY</p>
+        <p>Website last updated: <time datetime="2026-02-01">February 2, 2026</time></p>
+        <small>All content and trademarks are property of their respective owners</small>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[name="charms"]');
+            const notchCount = document.getElementById('notch-count');
+            const warningElement = document.getElementById('charm-warning');
+            const submitBtn = document.getElementById('submit-btn');
+            const form = document.getElementById('build-form');
+            
+            function updateNotchCount() {
+                let total = 0;
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        total += parseInt(checkbox.getAttribute('data-notches'));
+                    }
+                });
+                notchCount.textContent = total;
+                
+                if (total > 11) {
+                    notchCount.style.color = '#ff6b6b';
+                    warningElement.style.display = 'block';
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.5';
+                } else {
+                    notchCount.style.color = '#4a6fb5';
+                    warningElement.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }
+            }
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateNotchCount);
+            });
+
+            const nailLevelSelect = document.getElementById('nail-level');
+            const nailDamageStat = document.querySelector('.stat-item:nth-child(2) .stat-value');
+            
+            const nailDamageMap = {
+                'old-nail': '5',
+                'sharpened': '9',
+                'channeled': '13',
+                'coiled': '17',
+                'pure': '21'
+            };
+
+            nailLevelSelect.addEventListener('change', function() {
+                nailDamageStat.textContent = nailDamageMap[this.value];
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const notchTotal = parseInt(notchCount.textContent);
+                if (notchTotal > 11) {
+                    alert('Cannot submit build: Charm notches exceed maximum capacity (11)!');
+                    return;
+                }
+                
+                if (notchTotal === 0) {
+                    if (!confirm('No charms selected. Submit build anyway?')) {
+                        return;
+                    }
+                }
+                
+                alert('Build submitted successfully! (This is a demo)');
+            });
+			
+            updateNotchCount();
+        });
+    </script>
+</body>
+</html>

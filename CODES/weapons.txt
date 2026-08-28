@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nail Arts - Hollow Knight Archives</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Hall of Maps</a></li>
+        <li><a href="charms.html">Charm Inventory</a></li>
+        <li><a href="weapons.html">Nail Arts</a></li>
+        <li><a href="locations.html">Kingdom Locations</a></li>
+        <li><a href="builder.html">Build Builder</a></li>
+        <li><a href="survey.html">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <header>
+    <article class="hero">
+      <figure>
+        <center><img src="img/header.png" alt="Hollow Knight Header Banner"></center>
+        <center><figcaption>Nail Arts Mastery Header</figcaption></center>
+      </figure>
+      <center>
+        <h1>Nail Arts & Techniques</h1>
+        <p>Master the ways of the nail — from basic strikes to legendary arts</p>
+      </center>
+      <figure>
+        <center><img src="img/foot.png" alt="Decorative Divider" class="divider" style="margin: 20px 0 0 20px"	></center>
+      </figure>
+    </article>
+  </header>
+  <main>
+  
+    <section class="content">
+      <center>
+        <h2>Nail Upgrades</h2>
+      </center>
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>Nail</th>
+            <th>Name</th>
+            <th>Damage</th>
+            <th>Geo Cost</th>
+            <th>Upgrade Material</th>
+            <th>Location</th>
+            <th>Smith</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><figure><img src="img/Nail_1_Old_Nail.png" alt="Old Nail" weight="70" height="160"><figcaption>Old Nail</figcaption></figure></td>
+            <td>Old Nail</td>
+            <td>5</td>
+            <td>-</td>
+            <td>Starting Weapon</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><figure><img src="img/Nail_2_Sharpened_Nail.png" alt="Sharpened Nail"><figcaption>Sharpened Nail</figcaption></figure></td>
+            <td>Sharpened Nail</td>
+            <td>9</td>
+            <td>250</td>
+            <td>1 Pale Ore</td>
+            <td>Forgotten Crossroads</td>
+            <td>Sheo</td>
+          </tr>
+          <tr>
+            <td><figure><img src="img/Nail_3_Channelled_Nail.png" alt="Channelled Nail"><figcaption>Channelled Nail</figcaption></figure></td>
+            <td>Channelled Nail</td>
+            <td>13</td>
+            <td>800</td>
+            <td>2 Pale Ore</td>
+            <td>City of Tears</td>
+            <td>Sheo</td>
+          </tr>
+          <tr>
+            <td><figure><img src="img/Nail_4_Coiled_Nail.png" alt="Coiled Nail"><figcaption>Coiled Nail</figcaption></figure></td>
+            <td>Coiled Nail</td>
+            <td>17</td>
+            <td>2000</td>
+            <td>3 Pale Ore</td>
+            <td>Ancient Basin</td>
+            <td>Sheo</td>
+          </tr>
+          <tr>
+            <td><figure><img src="img/Nail_5_Pure_Nail.png" alt="Pure Nail"><figcaption>Pure Nail</figcaption></figure></td>
+            <td>Pure Nail</td>
+            <td>21</td>
+            <td>4000</td>
+            <td>4 Pale Ore</td>
+            <td>Kingdom's Edge</td>
+            <td>Sheo</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <center>
+        <h2>Nail Arts</h2>
+      </center>
+      <div class="gallery">
+        <article class="gallery-item">
+          <figure>
+            <img src="img/Icon_HK_Cyclone_Slash_Art.png" alt="Cyclone Slash Art">
+            <figcaption>Cyclone Slash Technique</figcaption>
+          </figure>
+          <h3>Cyclone Slash</h3>
+          <p>Hold ATTACK then release to spin rapidly</p>
+        </article>
+        <article class="gallery-item">
+          <figure>
+            <img src="img/Dash_Slash_Artwork.png" alt="Dash Slash Art">
+            <figcaption>Dash Slash Technique</figcaption>
+          </figure>
+          <h3>Dash Slash</h3>
+          <p>Hold ATTACK while dashing for a powerful lunge</p>
+        </article>
+        <article class="gallery-item">
+          <figure>
+            <img src="img/great slash.png" alt="Great Slash Art">
+            <figcaption>Great Slash Technique</figcaption>
+          </figure>
+          <h3>Great Slash</h3>
+          <p>Hold ATTACK then release for a wide arc</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <center>
+        <h2>Spell Inventory</h2>
+      </center>
+      <div class="gallery">
+        <article class="gallery-item">
+          <figure>
+            <img src="img/Vengeful_Spirit.png" alt="Vengeful Spirit Spell">
+            <figcaption>Vengeful Spirit Spell</figcaption>
+          </figure>
+          <h3>Vengeful Spirit</h3>
+        </article>
+        <article class="gallery-item">
+          <figure>
+            <img src="img/Desolate_Dive.png" alt="Desolate Dive Spell">
+            <figcaption>Desolate Dive Spell</figcaption>
+          </figure>
+          <h3>Desolate Dive</h3>
+        </article>
+        <article class="gallery-item">
+          <figure>
+            <img src="img/Howling_Wraiths.png" alt="Howling Wraiths Spell">
+            <figcaption>Howling Wraiths Spell</figcaption>
+          </figure>
+          <h3>Howling Wraiths</h3>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <center>
+      <p>Nail Mastery Level: Pure Nail Achieved</p>
+      <p>© 2026 Team Cherry's Hallownest | WEB SYSTEMS AND TECHNOLOGIES 1 LAB</p>
+      <p>Website last updated: <time datetime="2026-02-01">February 2, 2026</time></p>
+      <small>All content and trademarks are property of their respective owners</small>
+    </center>
+  </footer>
+</body>
+</html>

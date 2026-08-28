@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom Locations - Hollow Knight Archives</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Hall of Maps</a></li>
+        <li><a href="charms.html">Charm Inventory</a></li>
+        <li><a href="weapons.html">Nail Arts</a></li>
+        <li><a href="locations.html">Kingdom Locations</a></li>
+        <li><a href="builder.html">Build Builder</a></li>
+        <li><a href="survey.html">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <header>
+    <article class="hero">
+      <figure>
+        <center><img src="img/header.png" alt="Hollow Knight Header Banner"></center>
+        <center><figcaption>Hallownest Archives Header</figcaption></center>
+      </figure>
+      <center>
+        <h1>Hallownest Kingdom Locations</h1>
+        <p>Chart your progress through the fallen kingdom</p>
+      </center>
+      <figure>
+        <center><img src="img/foot.png" alt="Decorative Divider" class="divider" style="margin: 20px 0 0 20px"></center>
+      </figure>
+    </article>
+ </header>	
+  <main>
+    <section class="content">
+      <center>
+        <h2>Area Completion Tracker</h2>
+      </center>
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Map %</th>
+            <th>Charms</th>
+            <th>Grubs</th>
+            <th>Essence</th>
+            <th>Geo</th>
+            <th>Bosses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="dirtmouth">
+            <td>Dirtmouth</td>
+            <td>100%</td>
+            <td>1/1</td>
+            <td>0/0</td>
+            <td>0</td>
+            <td>500</td>
+            <td>0/0</td>
+          </tr>
+          <tr id="crossroads">
+            <td>Forgotten Crossroads</td>
+            <td>94%</td>
+            <td>3/4</td>
+            <td>5/8</td>
+            <td>120</td>
+            <td>2150</td>
+            <td>2/3</td>
+          </tr>
+          <tr id="greenpath">
+            <td>Greenpath</td>
+            <td>87%</td>
+            <td>2/3</td>
+            <td>3/5</td>
+            <td>85</td>
+            <td>1800</td>
+            <td>1/2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <center>
+        <h2>Stag Stations Unlocked</h2>
+      </center>
+      <fieldset>
+        <legend>Fast Travel Stations</legend>
+        <ul class="stag-list">
+          <li><label><input type="checkbox"> Dirtmouth</label></li>
+          <li><label><input type="checkbox"> Crossroads</label></li>
+          <li><label><input type="checkbox"> Greenpath</label></li>
+          <li><label><input type="checkbox"> Queen's Station</label></li>
+        </ul>
+      </fieldset>
+    </section>
+  </main>
+
+  <footer>
+    <center>
+      <p>Total Map Completion: 78% | Stag Stations: 8/9</p>
+      <p>© 2026 Team Cherry's Hallownest | WEB SYSTEMS AND TECHNOLOGIES 1 LAB</p>
+      <p>Last updated: <time datetime="2026-02-01">February 1, 2026</time></p>
+      <small>All content and trademarks are property of their respective owners</small>
+    </center>
+  </footer>
+</body>
+</html>

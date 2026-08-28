@@ -1,0 +1,753 @@
+/* Registration style*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #011926 100%);
+    color: #FFFFFF;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-attachment: fixed;
+    margin-top: 20px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#password-message {
+  display:none;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Green text color and a "/" icon when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "/";
+}
+
+/* Red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "x";
+}
+
+/* Headers */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #23395d;
+    position: relative;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(74, 111, 181, 0.3);
+    font-family: 'Cinzel', serif;
+}
+
+h2 {
+    color: #FFFFFF;
+    margin: 30px 0 20px 0;
+    font-size: 1.8rem;
+    border-left: 4px solid #23395d;
+    padding-left: 15px;
+}
+
+h3 {
+    color: #6b8fd8;
+    margin: 20px 0 15px 0;
+}
+
+/* Rarity Colors */
+.common { color: #94a3b8; }          
+.uncommon { color: #38b2ac; }        
+.rare { color: #4299e1; }           
+.epic { color: #667eea; }          
+.legendary { color: #ed8936; }      
+.unique { color: #ecc94b; }        
+
+/* Charm Effects */
+.charm-effect {
+    color: #8ba4e3;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px;
+    color: #8ba4e3;
+    border-top: 1px solid #23395d;
+    background: rgba(21, 34, 56, 0.8);
+    border-radius: 10px;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #5a7fc8;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(25, 40, 65, 0.9);
+    border: 2px solid #23395d;
+    border-radius: 8px;
+    color: #e0e7ff;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4a6fb5;
+    box-shadow: 0 0 10px rgba(74, 111, 181, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #23395d, #1c2e4a);
+    color: #e0e7ff;
+    padding: 14px 30px;
+    border: 2px solid #4a6fb5;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2d4570, #23395d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(35, 57, 93, 0.6);
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #23395d, transparent);
+    margin: 40px 0;
+}
+
+/* Tooltip Styles */
+[title] {
+    position: relative;
+}
+
+/* Survey box */
+.boxed-section {
+    background: rgba(25, 40, 65, 0.9);
+    border: 2px solid #23395d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+
+
+}
+
+
+.boxed-section h2 {
+    color: #FFFFFF;
+    border-left: 4px solid #23395d;
+    padding-left: 15px;
+    margin: 0 15px 15px 0;
+    font-size: 1.8rem;
+	
+}
+
+.radio-group, .checkbox-group {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.radio-group input, .checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.radio-group label, .checkbox-group label {
+    display: inline;
+    margin-bottom: 0;
+    color: #e0e7ff;
+    font-weight: normal;
+}
+
+
+.thank-you-box {
+    background: rgba(25, 40, 65, 0.9);
+    border: 2px solid #23395d;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.thank-you-box h3 {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+/* thank you */
+.thank-you-box p {
+    color: #8ba4e3;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    margin-top: 0;
+}
+
+/* Hollow Knight */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #011926 100%);
+    color: #FFFFFF;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* Navigation Bar */
+nav {
+    background: rgba(21, 34, 56, 0.95);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #23395d;
+    box-shadow: 0 4px 12px rgba(35, 57, 93, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #e0e7ff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(35, 57, 93, 0.3);
+}
+
+nav ul li a:hover {
+    background: rgba(35, 57, 93, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(35, 57, 93, 0.5);
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content {
+    background: rgba(28, 46, 74, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(21, 34, 56, 0.5);
+    border: 1px solid #23395d;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+/* Headers */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #23395d;
+    position: relative;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(74, 111, 181, 0.3);
+    font-family: 'Cinzel', serif;
+}
+
+h2 {
+    color: #FFFFFF;
+    margin: 30px 0 20px 0;
+    font-size: 1.8rem;
+    border-left: 4px solid #23395d;
+    padding-left: 15px;
+}
+
+h3 {
+    color: #6b8fd8;
+    margin: 20px 0 15px 0;
+}
+
+/* Interactive Image Map Area */
+.map-container {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(21, 34, 56, 0.7);
+    border-radius: 10px;
+    border: 2px solid #23395d;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #23395d;
+    box-shadow: 0 0 20px rgba(35, 57, 93, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+.map-instructions {
+    margin-top: 20px;
+    color: #8ba4e3;
+    font-style: italic;
+}
+
+/* Table Styling - Hollow knight Theme */
+.inventory-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    background: rgba(25, 40, 65, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(21, 34, 56, 0.4);
+}
+
+.inventory-table th {
+    background: linear-gradient(135deg, #23395d, #1c2e4a);
+    color: #e0e7ff;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #4a6fb5;
+}
+
+.inventory-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(35, 57, 93, 0.4);
+    transition: background-color 0.3s;
+}
+
+.inventory-table tr:hover {
+    background: rgba(35, 57, 93, 0.2);
+}
+
+.inventory-table tr:nth-child(even) {
+    background: rgba(35, 57, 93, 0.1);
+}
+
+/* Rarity Colors */
+.common { color: #94a3b8; }          /* Lighter blue-gray */
+.uncommon { color: #38b2ac; }        /* Teal blue */
+.rare { color: #4299e1; }           /* Medium blue */
+.epic { color: #667eea; }           /* Blue-purple */
+.legendary { color: #ed8936; }      /* Orange (kept for contrast) */
+.unique { color: #ecc94b; }         /* Gold (kept for contrast) */
+
+/* Charm Effects */
+.charm-effect {
+    color: #8ba4e3;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    background: rgba(25, 40, 65, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #23395d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(35, 57, 93, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #23395d;
+}
+
+.gallery-item p, .gallery-item h3 {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px;
+    color: #8ba4e3;
+    border-top: 1px solid #23395d;
+    background: rgba(21, 34, 56, 0.8);
+    border-radius: 10px;
+}
+
+/* Charm Build Notch Styling - DARKER BLUE */
+.charm-notch {
+    background: linear-gradient(135deg, #1a2f4a, #23395d) !important;
+    color: #e0e7ff !important;
+    padding: 8px 15px !important;
+    border-radius: 5px !important;
+    border: 1px solid #2d4570 !important;
+    box-shadow: 0 2px 4px rgba(21, 34, 56, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.charm-notch:hover {
+    background: linear-gradient(135deg, #23395d, #2d4570) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(35, 57, 93, 0.4) !important;
+}
+
+/* Tags and Badges - DARKER BLUE */
+.tag {
+    display: inline-block;
+    background: rgba(35, 57, 93, 0.4) !important;
+    color: #a3bffa !important;
+    padding: 4px 12px !important;
+    border-radius: 15px !important;
+    font-size: 0.85em !important;
+    margin: 2px !important;
+    border: 1px solid #2d4570 !important;
+}
+
+/* Build Display Items */
+.build-item {
+    background: rgba(28, 46, 74, 0.7) !important;
+    border: 2px solid #23395d !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin: 10px 0 !important;
+}
+
+/* Progress Indicators */
+.progress-bar {
+    background: rgba(35, 57, 93, 0.3);
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #23395d, #4a6fb5);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+	padding-left: 25px;
+    padding-right: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #5a7fc8;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(25, 40, 65, 0.9);
+    border: 2px solid #23395d;
+    border-radius: 8px;
+    color: #e0e7ff;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4a6fb5;
+    box-shadow: 0 0 10px rgba(74, 111, 181, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #23395d, #1c2e4a);
+    color: #e0e7ff;
+    padding: 14px 30px;
+    border: 2px solid #4a6fb5;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2d4570, #23395d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(35, 57, 93, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .inventory-table {
+        font-size: 0.9em;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Knight Animation */
+.knight-icon {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+/* Stats Display */
+.stats-display {
+    background: rgba(25, 40, 65, 0.9);
+    border: 2px solid #23395d;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.stats-display h3 {
+    color: #4a6fb5;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    background: rgba(35, 57, 93, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #4a6fb5;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #8ba4e3;
+}
+
+/* Checkbox and Radio Styles */
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Form Button Styles */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Secondary Button */
+button.secondary {
+    background: rgba(35, 57, 93, 0.2);
+    border: 2px solid #23395d;
+}
+
+button.secondary:hover {
+    background: rgba(35, 57, 93, 0.4);
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #23395d, transparent);
+    margin: 40px 0;
+}
+
+/* Tooltip Styles */
+[title] {
+    position: relative;
+}
+
+[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #152238;
+    color: #e0e7ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 1000;
+    border: 1px solid #23395d;
+}
+
+/* Notch Counter Styling */
+#notch-counter {
+    padding: 10px;
+    background: rgba(21, 34, 56, 0.7);
+    border-radius: 8px;
+    border: 1px solid #23395d;
+    margin-top: 15px;
+}
+
+#notch-count {
+    color: #4a6fb5;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Build Gallery Items - Darker Blue */
+.gallery-item h3 {
+    background: linear-gradient(135deg, #1a2f4a, #23395d);
+    padding: 10px;
+    margin: 0;
+    border-bottom: 2px solid #2d4570;
+}
+
+/* Checkbox Container Styling */
+div[style*="background: rgba(25, 40, 65, 0.7)"] {
+    border: 1px solid #23395d !important;
+    background: rgba(21, 34, 56, 0.7) !important;
+}
+
+div[style*="background: rgba(25, 40, 65, 0.7)"] div {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(35, 57, 93, 0.3);
+}
+
+div[style*="background: rgba(25, 40, 65, 0.7)"] div:last-child {
+    border-bottom: none;
+}
